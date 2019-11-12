@@ -27,6 +27,11 @@ module.exports = {
   
   devServer: {
     contentBase: './',
-    publicPath: '/dist'
+    publicPath: '/dist',
+
+    // 직접 주소 입력을 위한 설정
+    inline: true,
+    port: 8080,
+    historyApiFallback: true,
   }
 };
