@@ -15,7 +15,7 @@ module.exports = {
 
   resolve: {
     // 파일 확장자 처리
-    extensions: ['.ts', '.tsx', '.js']
+    extensions: ['.ts', '.tsx', '.js', '.json', '.scss', '.css'],
   },
 
   module: {
