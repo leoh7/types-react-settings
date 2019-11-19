@@ -1,6 +1,6 @@
 module.exports = {
   mode: 'development',
-
+  watch: true,
   // 엔트리 포인트
   entry: './src/index.tsx',
 
@@ -15,7 +15,7 @@ module.exports = {
 
   resolve: {
     // 파일 확장자 처리
-    extensions: ['.ts', '.tsx', '.js', '.json', '.scss', '.css'],
+    extensions: ['.ts', '.tsx', '.js', '.json'],
 /*  alias: {
       '@src': path.resolve(__dirname, 'src'),
     } */
@@ -24,7 +24,10 @@ module.exports = {
   module: {
     rules: [
       // .ts나 .tsx 확장자를 ts-loader가 트랜스파일
-      { test: /\.tsx?$/, loader: 'ts-loader'}
+      { test: /\.scss?$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
+      { test: /\.tsx?$/, loader: 'babel-loader' },
+      { test: /\.tsx?$/, loader: 'ts-loader' },
+      { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader'},
     ]
   },
   
